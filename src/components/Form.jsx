@@ -6,6 +6,7 @@ class Form extends React.Component {
     const { cardName, cardDescription, cardAttr1, cardAttr2, cardAttr3,
       cardImage, cardRare, cardTrunfo, isSaveButtonDisabled,
       onInputChange, onSaveButtonClick } = this.props;
+    const total = Number(cardAttr1) + Number(cardAttr2) + Number(cardAttr3);
     return (
       <div>
         <form>
@@ -88,7 +89,6 @@ class Form extends React.Component {
             <br />
             <select
               data-testid="rare-input"
-              value={ cardRare }
               id="rare"
               name="cardRare"
               onChange={ onInputChange }
@@ -98,6 +98,7 @@ class Form extends React.Component {
               <option>muito raro</option>
             </select>
           </label>
+          <p>{`Total de pontos = ${total}`}</p>
           <br />
           <label htmlFor="trunfo">
             <input
@@ -114,7 +115,7 @@ class Form extends React.Component {
             data-testid="save-button"
             type="button"
             name="isSaveButtonDisabled"
-            disabled={ isSaveButtonDisabled }
+            disabled={ !isSaveButtonDisabled }
             onClick={ onSaveButtonClick }
           >
             Salvar

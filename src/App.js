@@ -6,13 +6,13 @@ class App extends React.Component {
   state = {
     cardName: '',
     cardImage: '',
-    cardAttr1: 0,
-    cardAttr2: 0,
-    cardAttr3: 0,
+    cardAttr1: '',
+    cardAttr2: '',
+    cardAttr3: '',
     cardDescription: '',
     cardRare: '',
     cardTrunfo: '',
-    isSaveButtonDisabled: true,
+    isSaveButtonDisabled: '',
   };
 
   onInputChange = ({ target }) => {
@@ -20,7 +20,27 @@ class App extends React.Component {
     const value = type === 'checkbox' ? target.checked : target.value;
     this.setState({
       [name]: value,
+    }, () => {
+      this.setState({
+        isSaveButtonDisabled: this.ValidarBtn(),
+      });
     });
+  };
+
+  ValidarBtn = () => {
+    const { cardName, cardDescription, cardRare,
+      cardImage, cardAttr1, cardAttr2, cardAttr3 } = this.state;
+
+    const inputString = cardName.length > 0 && cardDescription.length > 0
+     && cardRare !== undefined && cardImage.length > 0;
+    const maxSum = 210;
+    const maxAtt = 90;
+    const minAtt = 0;
+    const soma = Number(cardAttr1) + Number(cardAttr2) + Number(cardAttr3) <= maxSum;
+    const attMax = cardAttr1 <= maxAtt && cardAttr2 <= maxAtt && cardAttr3 <= maxAtt;
+    const attMin = cardAttr1 >= minAtt && cardAttr2 >= minAtt && cardAttr3 >= minAtt;
+    const boolBtn = inputString && attMax && attMin && soma;
+    return boolBtn;
   };
 
   render() {
