@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-// hasTrunfo ,
+
 class Form extends React.Component {
   render() {
     const { cardName, cardDescription, cardAttr1, cardAttr2, cardAttr3,
-      cardImage, cardRare, cardTrunfo, isSaveButtonDisabled,
+      cardImage, cardRare, cardTrunfo, hasTrunfo, isSaveButtonDisabled,
       onInputChange, onSaveButtonClick } = this.props;
     const total = Number(cardAttr1) + Number(cardAttr2) + Number(cardAttr3);
     return (
