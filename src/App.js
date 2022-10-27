@@ -13,6 +13,7 @@ class App extends React.Component {
     cardRare: '',
     cardTrunfo: '',
     isSaveButtonDisabled: '',
+    NovoCard: [],
   };
 
   onInputChange = ({ target }) => {
@@ -30,7 +31,6 @@ class App extends React.Component {
   ValidarBtn = () => {
     const { cardName, cardDescription, cardRare,
       cardImage, cardAttr1, cardAttr2, cardAttr3 } = this.state;
-
     const inputString = cardName.length > 0 && cardDescription.length > 0
      && cardRare !== undefined && cardImage.length > 0;
     const maxSum = 210;
@@ -41,6 +41,37 @@ class App extends React.Component {
     const attMin = cardAttr1 >= minAtt && cardAttr2 >= minAtt && cardAttr3 >= minAtt;
     const boolBtn = inputString && attMax && attMin && soma;
     return boolBtn;
+  };
+
+  SalvarBtn = () => {
+    this.setState(({ cardName,
+      cardDescription,
+      cardRare,
+      cardImage,
+      cardAttr1,
+      cardAttr2,
+      cardAttr3,
+      cardTrunfo,
+      NovoCard }) => ({
+      NovoCard: [...NovoCard, {
+        cardName,
+        cardDescription,
+        cardRare,
+        cardImage,
+        cardAttr1,
+        cardAttr2,
+        cardAttr3,
+        cardTrunfo,
+      }],
+      cardName: '',
+      cardImage: '',
+      cardAttr1: '',
+      cardAttr2: '',
+      cardAttr3: '',
+      cardDescription: '',
+      cardRare: '',
+      cardTrunfo: '',
+    }));
   };
 
   render() {
@@ -60,6 +91,7 @@ class App extends React.Component {
           cardTrunfo={ cardTrunfo }
           isSaveButtonDisabled={ isSaveButtonDisabled }
           onInputChange={ this.onInputChange }
+          onSaveButtonClick={ this.SalvarBtn }
         />
         <Card
           cardName={ cardName }
