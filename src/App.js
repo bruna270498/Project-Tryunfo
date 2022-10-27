@@ -6,13 +6,13 @@ class App extends React.Component {
   state = {
     cardName: '',
     cardImage: '',
-    cardAttr1: '',
+    cardAttr1: 0,
     cardAttr2: 0,
     cardAttr3: 0,
     cardDescription: '',
     cardRare: '',
-    cardTrunfo: false,
-    isSaveButtonDisabled: '',
+    cardTrunfo: '',
+    isSaveButtonDisabled: true,
   };
 
   onInputChange = ({ target }) => {
@@ -28,7 +28,7 @@ class App extends React.Component {
       cardImage, cardRare, cardTrunfo, isSaveButtonDisabled } = this.state;
     return (
       <div>
-        <h1>ADICIONE UMA NOVA CARTA</h1>
+        <h1>Tryunfo</h1>
         <Form
           cardName={ cardName }
           cardDescription={ cardDescription }
