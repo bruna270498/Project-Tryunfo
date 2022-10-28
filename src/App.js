@@ -79,10 +79,29 @@ class App extends React.Component {
     }));
   };
 
+  ExcluirCard = (index, cardTrunfo) => {
+    const { NovoCard } = this.state;
+    const remove = NovoCard;
+    remove.splice(index, 1);
+    this.setState({
+      NovoCard: remove,
+      hasTrunfo: !cardTrunfo,
+    });
+  };
+
   ListaDeCard = () => {
     const { NovoCard } = this.state;
     const Cards = (NovoCard.map((e, index) => (
-      <li key={ index }><Card { ...e } /></li>
+      <li key={ index }>
+        <Card { ...e } />
+        <button
+          type="button"
+          data-testid="delete-button"
+          onClick={ () => this.ExcluirCard(index, e.cardTrunfo) }
+        >
+          Excluir
+        </button>
+      </li>
     )));
     return Cards;
   };
