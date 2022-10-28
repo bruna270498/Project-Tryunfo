@@ -79,6 +79,27 @@ class App extends React.Component {
     }));
   };
 
+  ListaDeCard = () => {
+    const { NovoCard } = this.state;
+    const Cards = (NovoCard.map(({ cardName, cardImage, cardAttr1, cardAttr2,
+      cardAttr3, cardDescription, cardRare, cardTrunfo, hasTrunfo }, index) => (
+      <li key={ index }>
+        <Card
+          cardName={ cardName }
+          cardDescription={ cardDescription }
+          cardAttr1={ cardAttr1 }
+          cardAttr2={ cardAttr2 }
+          cardAttr3={ cardAttr3 }
+          cardImage={ cardImage }
+          cardRare={ cardRare }
+          cardTrunfo={ cardTrunfo }
+          hasTrunfo={ hasTrunfo }
+        />
+      </li>
+    )));
+    return Cards;
+  };
+
   render() {
     const { cardName, cardDescription, cardAttr1, cardAttr2, cardAttr3,
       cardImage, cardRare, cardTrunfo, isSaveButtonDisabled, hasTrunfo } = this.state;
@@ -109,6 +130,7 @@ class App extends React.Component {
           cardRare={ cardRare }
           cardTrunfo={ cardTrunfo }
         />
+        <div>{this.ListaDeCard()}</div>
       </div>
     );
   }
