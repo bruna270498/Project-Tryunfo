@@ -1,4 +1,6 @@
 import React from 'react';
+import k from './horadeAventura.png';
+import './style.css';
 import Form from './components/Form';
 import Card from './components/Card';
 
@@ -92,10 +94,11 @@ class App extends React.Component {
   ListaDeCard = () => {
     const { NovoCard } = this.state;
     const Cards = (NovoCard.map((e, index) => (
-      <li key={ index }>
+      <li className="listaCard" key={ index }>
         <Card { ...e } />
         <button
           type="button"
+          className="btnExcluir"
           data-testid="delete-button"
           onClick={ () => this.ExcluirCard(index, e.cardTrunfo) }
         >
@@ -110,33 +113,35 @@ class App extends React.Component {
     const { cardName, cardDescription, cardAttr1, cardAttr2, cardAttr3,
       cardImage, cardRare, cardTrunfo, isSaveButtonDisabled, hasTrunfo } = this.state;
     return (
-      <div>
-        <h1>Tryunfo</h1>
-        <Form
-          cardName={ cardName }
-          cardDescription={ cardDescription }
-          cardAttr1={ cardAttr1 }
-          cardAttr2={ cardAttr2 }
-          cardAttr3={ cardAttr3 }
-          cardImage={ cardImage }
-          cardRare={ cardRare }
-          cardTrunfo={ cardTrunfo }
-          hasTrunfo={ hasTrunfo }
-          isSaveButtonDisabled={ !isSaveButtonDisabled }
-          onInputChange={ this.onInputChange }
-          onSaveButtonClick={ this.SalvarBtn }
-        />
-        <Card
-          cardName={ cardName }
-          cardDescription={ cardDescription }
-          cardAttr1={ cardAttr1 }
-          cardAttr2={ cardAttr2 }
-          cardAttr3={ cardAttr3 }
-          cardImage={ cardImage }
-          cardRare={ cardRare }
-          cardTrunfo={ cardTrunfo }
-        />
-        <div>{this.ListaDeCard()}</div>
+      <div className="pai">
+        <img className="image" src={ k } alt="Aventura" />
+        <div className="FormECard">
+          <Form
+            cardName={ cardName }
+            cardDescription={ cardDescription }
+            cardAttr1={ cardAttr1 }
+            cardAttr2={ cardAttr2 }
+            cardAttr3={ cardAttr3 }
+            cardImage={ cardImage }
+            cardRare={ cardRare }
+            cardTrunfo={ cardTrunfo }
+            hasTrunfo={ hasTrunfo }
+            isSaveButtonDisabled={ !isSaveButtonDisabled }
+            onInputChange={ this.onInputChange }
+            onSaveButtonClick={ this.SalvarBtn }
+          />
+          <Card
+            cardName={ cardName }
+            cardDescription={ cardDescription }
+            cardAttr1={ cardAttr1 }
+            cardAttr2={ cardAttr2 }
+            cardAttr3={ cardAttr3 }
+            cardImage={ cardImage }
+            cardRare={ cardRare }
+            cardTrunfo={ cardTrunfo }
+          />
+        </div>
+        <div className="CardsSalvos">{this.ListaDeCard()}</div>
       </div>
     );
   }

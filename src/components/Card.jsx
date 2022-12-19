@@ -1,22 +1,51 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import trunfo from '../trunfo2.png';
 
 class Card extends React.Component {
   triunfo = (card) => ((card === true)
-    ? <span data-testid="trunfo-card">Super Trunfo</span> : null);
+    ? <span className="trunCard" data-testid="trunfo-card">
+      <img className="imgTrun" src={ trunfo } alt="trunfo" />
+    </span> : null);
 
   render() {
     const { cardName, cardDescription, cardAttr1, cardAttr2,
       cardAttr3, cardImage, cardRare, cardTrunfo } = this.props;
     return (
-      <div>
-        <h2 data-testid="name-card">{ cardName }</h2>
-        <img src={ cardImage } alt={ cardName } data-testid="image-card" />
-        <p data-testid="description-card">{ cardDescription }</p>
-        <h3 data-testid="attr1-card">{ cardAttr1 }</h3>
-        <h3 data-testid="attr2-card">{ cardAttr2 }</h3>
-        <h3 data-testid="attr3-card">{ cardAttr3 }</h3>
-        <span data-testid="rare-card">{ cardRare }</span>
+      <div className="Card">
+        <div className="subCard">
+          <img
+            className="imgCard"
+            src={ cardImage }
+            alt={ cardName }
+            data-testid="image-card"
+          />
+          <div className="subClasName">
+            <h2 className="nomeCard" data-testid="name-card">{cardName}</h2>
+          </div>
+          <div className="descricaoCard">
+            <h3
+              className="textAtt"
+              data-testid="attr1-card"
+            >
+              {`Força . . . . . . . . . . . . . . . . . ${cardAttr1}`}
+            </h3>
+            <h3
+              data-testid="attr2-card"
+              className="textAtt"
+            >
+              {`Poder . . . . . . . . . . . . . . . . .${cardAttr2}`}
+            </h3>
+            <h3
+              data-testid="attr3-card"
+              className="textAtt"
+            >
+              {`Agilidade . . . . . . . . . . . . . .${cardAttr3} `}
+            </h3>
+          </div>
+        </div>
+        <span className="raroCard" data-testid="rare-card">{ cardRare }</span>
+        <p className="pCard" data-testid="description-card">{ cardDescription }</p>
         { this.triunfo(cardTrunfo) }
       </div>
     );
