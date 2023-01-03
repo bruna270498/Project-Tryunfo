@@ -130,16 +130,18 @@ class App extends React.Component {
             onInputChange={ this.onInputChange }
             onSaveButtonClick={ this.SalvarBtn }
           />
-          <Card
-            cardName={ cardName }
-            cardDescription={ cardDescription }
-            cardAttr1={ cardAttr1 }
-            cardAttr2={ cardAttr2 }
-            cardAttr3={ cardAttr3 }
-            cardImage={ cardImage }
-            cardRare={ cardRare }
-            cardTrunfo={ cardTrunfo }
-          />
+          <div>
+            <Card
+              cardName={ cardName }
+              cardDescription={ cardDescription }
+              cardAttr1={ cardAttr1 }
+              cardAttr2={ cardAttr2 }
+              cardAttr3={ cardAttr3 }
+              cardImage={ cardImage }
+              cardRare={ cardRare }
+              cardTrunfo={ cardTrunfo }
+            />
+          </div>
         </div>
         <div className="CardsSalvos">{this.ListaDeCard()}</div>
       </div>

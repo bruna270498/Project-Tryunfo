@@ -4,9 +4,11 @@ import trunfo from '../trunfo2.png';
 
 class Card extends React.Component {
   triunfo = (card) => ((card === true)
-    ? <span className="trunCard" data-testid="trunfo-card">
-      <img className="imgTrun" src={ trunfo } alt="trunfo" />
-    </span> : null);
+    ? (
+      <span className="trunCard" data-testid="trunfo-card">
+        <img className="imgTrun" src={ trunfo } alt="trunfo" />
+      </span>
+    ) : null);
 
   render() {
     const { cardName, cardDescription, cardAttr1, cardAttr2,
