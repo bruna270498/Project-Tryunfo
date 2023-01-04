@@ -1,13 +1,30 @@
-# :construction: README customizado em construção ! :construction:
-<!-- Olá, Tryber!
-Esse é apenas um arquivo inicial para o README do seu projeto no qual você pode customizar e reutilizar todas as vezes que for executar o trybe-publisher.
+# TRIUNFO CARD
 
-Para deixá-lo com a sua cara, basta alterar o seguinte arquivo da sua máquina: ~/.student-repo-publisher/custom/_NEW_README.md
+# Sobre o projeto
 
-É essencial que você preencha esse documento por conta própria, ok?
-Não deixe de usar nossas dicas de escrita de README de projetos, e deixe sua criatividade brilhar!
-:warning: IMPORTANTE: você precisa deixar nítido:
-- quais arquivos/pastas foram desenvolvidos por você; 
-- quais arquivos/pastas foram desenvolvidos por outra pessoa estudante;
-- quais arquivos/pastas foram desenvolvidos pela Trybe.
--->
+Neste projeto desenvolvo um jogo no estilo Super Trunfo!
+
+Onde uma pessoa usuária ao utilizar essa aplicação deverá ser capaz de:
+
+- Criar um baralho com o tema livre;
+- Adicionar e remover uma carta do baralho;
+- Visualizar todas as cartas que foram adicionadas ao baralho;
+
+## Habilidades desenvolvidas:
+
+- Ler o estado de um componente e usá-lo para alterar o que exibimos no navegador;
+- Inicializar um componente, dando a ele um estado pré-definido;
+- Atualizar o estado de um componente;
+- Capturar eventos usando a sintaxe do React;
+- Crie formulários utilizando a sintaxe JSX com as tags: input, textarea, select, form,checkbox;
+- Transmitir informações de componentes filhos para componentes pais via callbacks;
+
+## Linguagens utilizadas:
+
+- React;
+- CSS;
+- JavaScript;
+
+## Layout
+
+
