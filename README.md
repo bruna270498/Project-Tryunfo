@@ -35,7 +35,7 @@ Onde uma pessoa usuária ao utilizar essa aplicação deverá ser capaz de:
  ```bash
  # clone o repositorio
  
-- git clone git@github.com:bruna270498/Frontend-online-store.git
+- git clone git@github.com:bruna270498/Project-Tryunfo.git
 
 # Instale as dependências
 
