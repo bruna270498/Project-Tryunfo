@@ -26,5 +26,8 @@ Onde uma pessoa usuária ao utilizar essa aplicação deverá ser capaz de:
 - JavaScript;
 
 ## Layout
+![ezgif com-gif-maker](https://user-images.githubusercontent.com/74669052/210861848-0d50d5bf-e83f-49ef-9ae7-cea5f62df93d.gif)
+![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/74669052/210861855-d24c457f-caf1-430b-94c0-318358f1ba5c.gif)
+
 
 
