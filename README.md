@@ -46,7 +46,12 @@ Onde uma pessoa usuária ao utilizar essa aplicação deverá ser capaz de:
 
 - npm install.
 
+# Rode o comando
+
+- npm start
+
 ```
+
 
 
 
